@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "wRyBlVwqD2C3jW07QtRsv86NWkGwEevxlo6AY5t9zOj8NoUxfRoXWlmyTevCDeZQBfCt7fEs8Gnl+YaeEkZIWg==",
+  "dgSpecHash": "yz4OnLkZWoA=",
   "success": true,
   "projectFilePath": "C:\\Users\\woas\\Documents\\1Coding\\itHomework\\HashedDice\\HashedDice.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\woas\\.nuget\\packages\\consoletables\\2.6.2\\consoletables.2.6.2.nupkg.sha512",
+    "C:\\Users\\woas\\.nuget\\packages\\wcwidth\\1.0.0\\wcwidth.1.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -13,3 +13,7 @@ C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\refint\Ha
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\HashedDice.pdb
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\HashedDice.genruntimeconfig.cache
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\ref\HashedDice.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net7.0\ConsoleTables.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net7.0\Wcwidth.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\HashedDice.sourcelink.json
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net7.0\HashedDice.csproj.Up2Date
