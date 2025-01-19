@@ -38,7 +38,7 @@ class SecureRandomGen
     {
         byte[] messageBytes = BitConverter.GetBytes(message);
 
-        using (var hmac = new HMACSHA256(key))
+        using (var hmac = new HMACSHA3_256(key))
             return hmac.ComputeHash(messageBytes);
     }
 }
