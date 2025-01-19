@@ -1,0 +1,14 @@
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net8.0\HashedDice.exe
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net8.0\HashedDice.deps.json
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net8.0\HashedDice.runtimeconfig.json
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net8.0\HashedDice.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\bin\Debug\net8.0\HashedDice.pdb
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.AssemblyInfoInputs.cache
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.AssemblyInfo.cs
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.csproj.CoreCompileInputs.cache
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\refint\HashedDice.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.pdb
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.genruntimeconfig.cache
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\ref\HashedDice.dll
