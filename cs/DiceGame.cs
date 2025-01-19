@@ -17,10 +17,10 @@ public class DiceGame
 		optionsGiver = new OptionsGiver(HelpDisplayer.GenerateChancesTable(dices));
 		Console.WriteLine($"Starting a game with following dice: {string.Join(' ', dices.Select(x => x.ToString()))}");
 		RandPickFirst();
-		PCThrow();
-		PlayerThrow();
+		ThrowStage(true);
+		ThrowStage(false);
 		GameResult();
-	}
+    }
 
 	// Game stages v
 
@@ -33,20 +33,20 @@ public class DiceGame
 		if (playerPick == srgbin.secretInt)
 		{
 			Console.WriteLine($"Congrats! You guessed my number (KEY={srgbin.SecretKey})");
-			PlayerPicksDice();
-			PCPicksDice();
+			DicePicking(true);
+            DicePicking(false);
 		}
 		else
 		{
 			Console.WriteLine($"Sorry! You didn't guess my number (KEY={srgbin.SecretKey})");
-			PCPicksDice();
-			PlayerPicksDice();
-		}
+            DicePicking(false);
+            DicePicking(true);
+        }
 	}
 
-	public void PlayerThrow()
+	public void ThrowStage(bool playersTurn)
 	{
-        Console.WriteLine("Time for your throw...");
+        Console.WriteLine(playersTurn ? "Time for your throw..." : "Time for my throw...");
         SecureRandomGen pcThrowRand = new SecureRandomGen(0, 5);
         Console.WriteLine($"I've selected a random value in 0..5 range (HMAC={pcThrowRand.Hmac})");
         int userModSix = ReadModSix();
@@ -54,22 +54,11 @@ public class DiceGame
         Console.WriteLine($"My number was {pcThrowRand.secretInt} (KEY={pcThrowRand.SecretKey})");
         int res = (pcThrowRand.secretInt + userModSix) % 6;
         Console.WriteLine($"Resulting sum: {pcThrowRand.secretInt} + {userModSix} = {res} (mod 6)");
-        scorePlayer = dicePlayer.Sides[res];
-        Console.WriteLine($"You got a score of {scorePlayer}");
-    }
-
-	public void PCThrow()
-	{
-		Console.WriteLine("Time for my throw...");
-		SecureRandomGen pcThrowRand = new SecureRandomGen(0, 5);
-		Console.WriteLine($"I've selected a random value in 0..5 range (HMAC={pcThrowRand.Hmac})");
-		int userModSix = ReadModSix();
-        Console.WriteLine($"You've selected {userModSix}");
-		Console.WriteLine($"My number was {pcThrowRand.secretInt} (KEY={pcThrowRand.SecretKey})");
-		int res = (pcThrowRand.secretInt + userModSix) % 6;
-        Console.WriteLine($"Resulting sum: {pcThrowRand.secretInt} + {userModSix} = {res} (mod 6)");
-		scorePC = dicePC.Sides[res];
-		Console.WriteLine($"I got a score of {scorePC}");
+        if (playersTurn)
+            scorePlayer = dicePlayer.Sides[res];
+        else
+            scorePC = dicePC.Sides[res];
+        Console.WriteLine(playersTurn ? $"You got a score of {scorePlayer}!" : $"I got a score of {scorePC}!");
     }
 
 	public void GameResult()
@@ -84,23 +73,27 @@ public class DiceGame
 
 	// Helper functions
 
-	public void PlayerPicksDice()
+	public void DicePicking(bool playerPicks)
 	{
-		Console.WriteLine("Pick your poison...");
-		int pick_index = optionsGiver.ReadOptions(dices.Select(x => x.ToString()).ToList());
-		dicePlayer = dices[pick_index];
-		Console.WriteLine($"You've picked die #{pick_index} ({dicePlayer})");
-		dices.RemoveAt(pick_index);
-	}
-
-	public void PCPicksDice()
-	{
-		Console.WriteLine("Let me pick a die...");
-		int pick_index = new Random().Next(0, dices.Count);
-		Console.WriteLine($"I've picked die #{pick_index} ({dicePC})");
-		dicePC = dices[pick_index];
-		dices.RemoveAt(pick_index);
-	}
+		Console.WriteLine(playerPicks ? "Pick your poison..." : "Let me pick a die...");
+		int pick_index;
+		Dice picked_dice;
+		if (playerPicks)
+		{
+			pick_index = optionsGiver.ReadOptions(dices.Select(x => x.ToString()).ToList());
+            picked_dice = dices[pick_index];
+			dicePlayer = picked_dice;
+            Console.WriteLine($"You've picked die #{pick_index} ({picked_dice})");
+        }
+		else
+		{
+            pick_index = new Random().Next(0, dices.Count);
+            picked_dice = dices[pick_index];
+			dicePC = picked_dice;
+            Console.WriteLine($"I've picked die #{pick_index} ({picked_dice})");
+        }
+        dices.RemoveAt(pick_index);
+    }
 
 	public int ReadModSix()
 	{
