@@ -12,3 +12,4 @@ C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\refint\Ha
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.pdb
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.genruntimeconfig.cache
 C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\ref\HashedDice.dll
+C:\Users\woas\Documents\1Coding\itHomework\HashedDice\obj\Debug\net8.0\HashedDice.sourcelink.json
