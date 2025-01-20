@@ -8,7 +8,7 @@ class DiceParser
 			string[] sides = arg.Split(',');
 			if (sides.Length != 6)
 			{
-				Console.WriteLine($"Dice has incorrect number of sides ({sides.Length})");
+				Console.WriteLine($"Die has incorrect number of sides ({sides.Length})");
                 Environment.Exit(0);
             }
 			int[] diceSides = new int[6];
@@ -17,21 +17,21 @@ class DiceParser
 				string side = sides[i];
 				if (!int.TryParse(side, out int sideInt))
 				{
-					Console.WriteLine($"Invalid dice side: {side}");
+					Console.WriteLine($"Invalid die side: {side}");
 					Environment.Exit(0);
 				}
 				if (sideInt < 0)
 				{
-					Console.WriteLine($"Dice side cannot be negative: {side}");
+					Console.WriteLine($"Die side cannot be negative: {side}");
 					Environment.Exit(0);
 				}
 				diceSides[i] = sideInt;
 			}
 			dices.Add(new Dice(diceSides));
 		}
-		if (dices.Count < 2)
+		if (dices.Count <= 2)
 		{
-            Console.WriteLine("At least two dices are required to play the game");
+            Console.WriteLine("At least three dice are required to play the game");
             Environment.Exit(0);
         }
 		return dices;
